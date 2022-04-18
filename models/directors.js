@@ -6,4 +6,4 @@ const directorsSchema = new Schema({
     age: Number,
 });
 
-module.exports = mongoose.model("Director", movieSchema);
+module.exports = mongoose.model("Director", directorsSchema);
