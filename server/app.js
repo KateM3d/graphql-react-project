@@ -4,12 +4,12 @@ const schema = require("../schema/schema");
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const URL = process.env.MY_KEY;
+const MY_URL = process.env.MY_KEY;
 
 const app = express();
 const PORT = 3005;
 
-mongoose.connect(URL);
+mongoose.connect(MY_URL);
 
 app.use(
     "/graphql",
