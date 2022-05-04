@@ -28,8 +28,24 @@
 .btn {
     background-color: #FA58B6;
     border: none;
+    margin: 15px;
     &-container {
         display: flex;
         justify-content: flex-end;
     }
+    &-add {
+        font-size: 40px;
+        width: 50px;
+    }
+}
+
+.icon {
+    background-color: #FA58B6;
+    border: none;
+}
+
+.container {
+    margin-top: 50vh;
+    display: flex;
+    justify-content: center;
 }

@@ -1,13 +1,22 @@
 import React, { useState } from "react";
-import DirectorsForm from "../DirectorsForm/DirectorsForm";
-import MoviesForm from "../MoviesForm/MoviesForms";
+import Forms from "../Form/Forms";
+
+import "./Tabs.scss";
 
 function Tabs() {
   const [selected, setSelected] = useState("movies");
   return (
     <>
       <h2 className="header">My Movies Collection</h2>
-      <div>{selected ? <MoviesForm /> : <DirectorsForm />}</div>
+      <div className="headers">
+        <h2 className="header" onClick={() => setSelected("movies")}>
+          Movies
+        </h2>
+        <h2 className="header" onClick={() => setSelected("directors")}>
+          Directors
+        </h2>
+      </div>
+      <Forms selected={selected} />
     </>
   );
 }

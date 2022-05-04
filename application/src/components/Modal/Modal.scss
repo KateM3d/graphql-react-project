@@ -1,0 +1,28 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-container {
+        width: 350px;
+        border: 2px solid yellow;
+        margin: auto;
+    }
+    &-input {
+        background-color: white;
+        width: 200px;
+        height: 30px;
+        justify-content: center;
+        color: black;
+        padding-left: 5px;
+    }
+}
+
+label {
+    margin-top: 5px;
+}
+
+span {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
