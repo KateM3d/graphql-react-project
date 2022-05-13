@@ -1,26 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiFillEdit, AiFillDelete } from "react-icons/ai";
 import Modal from "../Modal/Modal";
 import { useQuery, gql } from "@apollo/client";
 import "./Forms";
 
-const moviesQuery = gql`
-  query moviesQuery {
-    movies {
-      id
+const QUERY_DIRECTORS = gql`
+  query {
+    directors {
       name
-      genre
-      director
+      age
     }
   }
 `;
 
 const Movies = () => {
-  const { data } = useQuery(moviesQuery);
+  const { data } = useQuery(QUERY_DIRECTORS);
+  if (data) {
+    console.log(data);
+  } else {
+    console.log("no ");
+  }
 
-  console.log("hiii");
-
-  console.log(data);
   // return data.map(({ id, movie }) => (
   //   <div key={id}>
   //     <>
@@ -42,7 +42,14 @@ const Movies = () => {
   // ));
   return (
     <>
-      <p>hello</p>
+      {/* {data.directors.map((el, index) => {
+        return (
+          <div key={index}>
+            <p>{el.name}</p>
+            <p>{el.age}</p>
+          </div>
+        );
+      })} */}
     </>
   );
 };
