@@ -4,40 +4,47 @@ import Modal from "../Modal/Modal";
 import { useQuery, gql } from "@apollo/client";
 import "./Forms";
 
-const MOVIES = gql`
-  query Movies {
-    movie {
+const moviesQuery = gql`
+  query moviesQuery {
+    movies {
       id
       name
+      genre
+      director
     }
   }
 `;
 
 const Movies = () => {
-  const { loading, error, data } = useQuery(MOVIES);
+  const { data } = useQuery(moviesQuery);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error</p>;
+  console.log("hiii");
 
-  return data.map(({ id, movie }) => (
-    <div key={id}>
-      <>
-        <p className="tableRow-name">{movie.name}</p>
-        <p className="tableRow-name">{movie.genre}</p>
-        <p className="tableRow-name">rate 1</p>
-        <p className="tableRow-name">{movie.director}</p>
-        <p className="tableRow-name">watched</p>
-        <div className="btn-container">
-          {/* <button className="icon" onClick={() => handleEdit()}>
-            <AiFillEdit />
-          </button>
-          <button className="icon" onClick={() => handleDelete()}>
-            <AiFillDelete />
-          </button> */}
-        </div>
-      </>
-    </div>
-  ));
+  console.log(data);
+  // return data.map(({ id, movie }) => (
+  //   <div key={id}>
+  //     <>
+  //       <p className="tableRow-name">{movie.name}</p>
+  //       <p className="tableRow-name">{movie.genre}</p>
+  //       <p className="tableRow-name">rate 1</p>
+  //       <p className="tableRow-name">{movie.director}</p>
+  //       <p className="tableRow-name">watched</p>
+  //       <div className="btn-container">
+  //         {/* <button className="icon" onClick={() => handleEdit()}>
+  //           <AiFillEdit />
+  //         </button>
+  //         <button className="icon" onClick={() => handleDelete()}>
+  //           <AiFillDelete />
+  //         </button> */}
+  //       </div>
+  //     </>
+  //   </div>
+  // ));
+  return (
+    <>
+      <p>hello</p>
+    </>
+  );
 };
 
 const TableRow = ({ selected }) => {

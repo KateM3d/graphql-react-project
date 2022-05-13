@@ -12,6 +12,8 @@ const PORT = 3005;
 
 mongoose.connect(MY_URL, { useNewUrlParser: true });
 
+app.use(cors());
+
 app.use(
     "/graphql",
     graphqlHTTP({
@@ -19,8 +21,6 @@ app.use(
         graphiql: true,
     })
 );
-
-app.use(cors());
 
 const dbConnection = mongoose.connection;
 dbConnection.on("error", (err) => console.log(`connection error ${err}`));
