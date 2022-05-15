@@ -15,11 +15,14 @@ const QUERY_DIRECTORS = gql`
 
 const Movies = () => {
   const { data } = useQuery(QUERY_DIRECTORS);
-  if (data) {
-    console.log(data);
-  } else {
-    console.log("no ");
-  }
+
+  useEffect(() => {
+    if (data) {
+      console.log(data);
+    } else {
+      console.log("no ");
+    }
+  }, [data]);
 
   // return data.map(({ id, movie }) => (
   //   <div key={id}>
